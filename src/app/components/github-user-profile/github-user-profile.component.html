@@ -1,7 +1,7 @@
-<h1 class="text-3xl font-bold underline mt-8">Github Dev Finder</h1>
+<h1 class="text-5xl font-bold mt-8"> Dev<span class="text-blue-500">Finder</span></h1>
 
 <div class="mt-8">
-  <div class="flex bg-blue-100 items-center mx-auto gap-10 p-4">
+  <div class="flex bg-blue-100 items-center mx-auto gap-10 p-4 search-bar-section">
     <div class="icon">
       <svg width="98" height="96" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -33,7 +33,7 @@
   </div>
 
 
-<div class="user-details mt-8" *ngIf="githubUserDetails">
+<div class="user-details mt-8 m-4" *ngIf="githubUserDetails">
   <section class="bg-gray-100 p-4 rounded-md">
     <div class="flex items-center">
       <img
@@ -111,10 +111,10 @@
 </div>
 
 
-<div class="pagination mt-4" *ngIf="hasData">
+<div class="pagination m-4" *ngIf="hasData">
   <button class="pagination-btn button" (click)="loadPage(currentPage - 1)" [disabled]="currentPage === 1">Previous Page</button>
   <ng-container *ngFor="let page of getPageNumbers()">
     <button class="pagination-btn"  style="padding:0.5rem ;margin-left:0.5rem" (click)="loadPage(page)" [class.active]="page === currentPage">{{ page }}</button>
   </ng-container>
-  <button class="pagination-btn button" (click)="loadPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next Page</button>
+  <button class="pagination-btn button ml-4" (click)="loadPage(currentPage + 1)" [disabled]="currentPage === totalPages">Next Page</button>
 </div>
