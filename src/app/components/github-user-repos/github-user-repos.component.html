@@ -1,0 +1,37 @@
+<div class="repos-container">
+    <div *ngFor="let repo of repoData" class="repo-item">
+      <div class="repo-header">
+        <h2 class="repo-name">{{ repo.name }} <span *ngIf="repo.language" class="p-2 bg-blue-300 text-blue-700" style="border-radius: 0.5rem;">{{repo.language}}</span></h2>
+        <div class="repo-details">
+          <div class="stars">
+            <svg
+              height="16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+            >
+              <!-- SVG path for stars -->
+            </svg>
+            <span>{{ repo.stargazers_count }}</span>
+          </div>
+          <div class="forks">
+            <svg
+              height="16"
+              width="16"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-4 h-4"
+            >
+              <!-- SVG path for forks -->
+            </svg>
+            <span>{{ repo.forks_count }}</span>
+          </div>
+        </div>
+      </div>
+      <div class="repo-languages">
+        <div *ngFor="let language of repo.languages" class="language-chip">
+          {{ language }}
+        </div>
+      </div>
+    </div>
+  </div>
+  
